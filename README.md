@@ -5,6 +5,11 @@ Revision 1.2:
 * MSU-1 Music tracks now supported
 * (mostly) fixed the stats screen, I didn't even know it existed!
 
+## Documentation
+
+* [MEMORY_MAP.md](MEMORY_MAP.md) - Memory address reference for game variables
+* [CHARACTER_ENCODING.md](CHARACTER_ENCODING.md) - Character encoding tables for different screens
+
 # Generating the needed files
 
 For copyright reasons I am not supplying any of the CHR ROM bytes.  There's a go script included in the `utilities/` directory that will extract the needed `.asm` files from a headered Super Dodge Ball rom with an md5 hash of `9c819e679f5fab4ef836761d31e98adc`.

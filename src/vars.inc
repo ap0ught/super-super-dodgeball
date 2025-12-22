@@ -1,11 +1,20 @@
 ; Original Game Variables
 
-NES_V_SCROLL        = $FC
-NES_H_SCROLL        = $FD
-PPU_CONTROL_STATUS  = $FF
-PPU_MASK_STATUS     = $FE
+ACTIVE_BG1_BANK         = $69    ; MMC1 mapper data
+NUM_HUMAN_PLAYERS       = $6F    ; Number of human players (Bean Ball: 1-4)
+PLAYER_2_TEAM           = $7A    ; Player 2 Team
+PLAYER_1_TEAM           = $7B    ; Player 1 Team
+PLAYERS_ALIVE_P2        = $80    ; Players alive on P2 team (normal)/CPU team (Bean Ball)
+PLAYERS_ALIVE_P1        = $81    ; Players alive on P1 team (normal)/Human team (Bean Ball)
+CONTROLLER_4016_LAST    = $FB    ; Last value written to 4016 (NES controller register)
+NES_V_SCROLL            = $FC    ; Background Y Scroll value
+NES_H_SCROLL            = $FD    ; Background X Scroll value
+PPU_MASK_STATUS         = $FE    ; Internal copy of PPUMASK
+PPU_CONTROL_STATUS      = $FF    ; Internal copy of PPUCTRL
+NMI_FLAGS               = $100   ; NMI flags
 ACTIVE_NES_BANK         = $0103
-ACTIVE_BG1_BANK         = $69
+BEAN_BALL_LEFT_ARROW    = $168   ; Used for left arrow tile in Bean Ball
+BEAN_BALL_RIGHT_ARROW   = $169   ; Used for right arrow tile in Bean Ball
 
 
 ; SNES Register Value storage
@@ -63,11 +72,23 @@ CHR_BANK_NEXT_OBJ_BANK= $1612
 OBJ_CHR_HB          = $1615
 
 ; Paletter lookup consolidation
+PALETTE_OFFSET = $613
+CURR_PALETTE_ADDR = $614
+OAM_CURR_INDEX = $617            ; Current index into OAM
+
 PALETTE_LOAD_LB = $ED
 PALETTE_LOAD_HB = $EE
 PALETTE_LOAD_DB = $EF
-PALETTE_OFFSET = $613
-CURR_PALETTE_ADDR = $614
+
+
+; Game State Variables
+CURR_PRG_BANK     = $6D9         ; Currently loaded PRG bank
+DIFFICULTY_LEVEL  = $6EA         ; Difficulty level
+VERSUS_TEAM_COLORS = $6FC        ; Versus Mode team colors
+SOUND_TYPE        = $700         ; Sound Type ($00 = Sound Effect, $02 = Music, $40 = ??)
+CURR_SONG_SOUND   = $701         ; Current Song/Sound
+MUSIC_SPEED_TEMPO = $717         ; Music Speed/Tempo
+KUMAGAI_STRING    = $7F0         ; "KUMAGAI" string used for reset detection (7 bytes)
 
 
 ; MSU Variables 1220 - 129F
